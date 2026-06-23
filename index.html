@@ -1,0 +1,1917 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Bakul Risol | Authentic Premium Taste</title>
+    <!-- Tambahkan kode di bawah ini untuk Favicon/Logo Tab -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="logobakurisol.jpg"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation CSS -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome (Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                DEFAULT: '#D4AF37',
+                light: '#E5C965',
+                dark: '#B08D28',
+              },
+              cream: {
+                light: '#FFFDF9',
+                DEFAULT: '#F8F4EC',
+                dark: '#EAE1D0',
+              },
+              textmain: '#2C2A29',
+              textmuted: '#6B6661',
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['Montserrat', 'sans-serif'],
+            },
+            backgroundImage: {
+              texture:
+                "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: auto;
+        overflow-x: hidden !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #fffdf9;
+        color: #2c2a29;
+        position: relative;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8f4ec;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b08d28;
+      }
+
+      .glass-nav {
+        background: rgba(255, 253, 249, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      }
+
+      .img-hover-zoom {
+        overflow: hidden;
+      }
+      .img-hover-zoom img {
+        transition: transform 0.8s ease;
+      }
+      .img-hover-zoom:hover img {
+        transform: scale(1.08);
+      }
+
+      .text-gradient-gold {
+        background: linear-gradient(
+          to right,
+          #b08d28,
+          #d4af37,
+          #b08d28
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: shine 4s linear infinite;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Animations for Drawer and Pages */
+      .slide-panel {
+        transition: transform 0.4s
+          cubic-bezier(0.16, 1, 0.3, 1);
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans antialiased selection:bg-gold selection:text-white"
+  >
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 py-4"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div
+            class="w-14 h-14 rounded-full bg-white overflow-hidden shadow-md p-0.5 transition-transform duration-500 group-hover:scale-105"
+          >
+            <img
+              src="logobakurisol.jpg    "
+              onerror="
+                this.src =
+                  'https://placehold.co/100x100/D4AF37/ffffff?text=BR'
+              "
+              alt="Bakul Risol Logo"
+              class="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <span
+            class="font-serif text-2xl font-bold tracking-wider text-textmain group-hover:text-gold transition-colors"
+            >BAKUL RISOL</span
+          >
+        </a>
+
+        <!-- Desktop Menu -->
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-widest uppercase text-textmain"
+        >
+          <a
+            href="#beranda"
+            class="hover:text-gold transition-colors"
+            >Beranda</a
+          >
+          <a
+            href="#cerita"
+            class="hover:text-gold transition-colors"
+            >Cerita</a
+          >
+          <a
+            href="#koleksi"
+            class="hover:text-gold transition-colors"
+            >Koleksi</a
+          >
+          <a
+            href="#testimoni"
+            class="hover:text-gold transition-colors"
+            >Testimoni</a
+          >
+
+          <button
+            onclick="toggleCart()"
+            class="relative hover:text-gold transition-colors focus:outline-none flex items-center"
+          >
+            <i class="fas fa-shopping-bag text-lg"></i>
+            <span
+              id="cart-badge-desktop"
+              class="absolute -top-2.5 -right-3 bg-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-sm scale-0 transition-all duration-300"
+              >0</span
+            >
+          </button>
+
+          <a
+            href="#pesan"
+            class="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300 rounded-full"
+            >Pesan</a
+          >
+        </div>
+
+        <!-- Mobile Buttons -->
+        <div class="flex items-center gap-5 md:hidden">
+          <button
+            onclick="toggleCart()"
+            class="relative text-gold focus:outline-none p-1"
+          >
+            <i class="fas fa-shopping-bag text-xl"></i>
+            <span
+              id="cart-badge-mobile"
+              class="absolute -top-1.5 -right-2 bg-gold text-white text-[9px] font-bold w-4.5 h-4.5 flex items-center justify-center rounded-full shadow-sm scale-0 transition-all duration-300"
+              >0</span
+            >
+          </button>
+          <button
+            class="text-2xl text-gold focus:outline-none"
+            onclick="toggleMobileMenu()"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-black/60 backdrop-blur-md z-[100] flex flex-col items-center justify-center gap-6 transition-all duration-400 opacity-0 pointer-events-none scale-95 h-[100dvh] overflow-hidden"
+    >
+      <button
+        class="absolute top-6 right-6 text-4xl text-white focus:outline-none hover:text-gold hover:rotate-90 transition-all duration-300 p-2"
+        onclick="toggleMobileMenu()"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- Logo Bulat Premium di Bagian Teratas Menu HP/Tablet -->
+      <img
+        src="logobakurisol.jpg"
+        onerror="
+          this.src =
+            'https://placehold.co/150x150/D4AF37/ffffff?text=BR'
+        "
+        alt="Logo Bakul Risol"
+        class="w-28 h-28 mb-4 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)] border-2 border-gold p-1 shrink-0 object-cover"
+      />
+      <a
+        href="#beranda"
+        class="font-serif text-3xl text-white hover:text-gold transition-colors font-medium tracking-wide drop-shadow-lg"
+        onclick="toggleMobileMenu()"
+        >Beranda</a
+      >
+      <a
+        href="#cerita"
+        class="font-serif text-3xl text-white hover:text-gold transition-colors font-medium tracking-wide drop-shadow-lg"
+        onclick="toggleMobileMenu()"
+        >Cerita</a
+      >
+      <a
+        href="#koleksi"
+        class="font-serif text-3xl text-white hover:text-gold transition-colors font-medium tracking-wide drop-shadow-lg"
+        onclick="toggleMobileMenu()"
+        >Koleksi</a
+      >
+      <a
+        href="#testimoni"
+        class="font-serif text-3xl text-white hover:text-gold transition-colors font-medium tracking-wide drop-shadow-lg"
+        onclick="toggleMobileMenu()"
+        >Testimoni</a
+      >
+      <button
+        onclick="
+          toggleMobileMenu();
+          toggleCart();
+        "
+        class="font-serif text-2xl px-8 py-3 mt-4 border-2 border-gold rounded-full text-gold hover:bg-gold hover:text-white transition-all font-bold focus:outline-none shadow-lg"
+      >
+        <i class="fas fa-shopping-bag mr-2"></i>Keranjang
+      </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      id="beranda"
+      class="relative h-screen flex items-center justify-center bg-[url('backhero.jpg')] bg-cover bg-center bg-fixed bg-no-repeat"
+    >
+      <div
+        class="absolute inset-0 bg-cream-light opacity-[0.85] pointer-events-none"
+      ></div>
+      <div
+        class="absolute inset-0 bg-texture opacity-40 pointer-events-none mix-blend-multiply"
+      ></div>
+
+      <div
+        class="relative z-10 text-center px-4 max-w-4xl mt-16"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
+        <h1
+          class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-textmain leading-tight"
+        >
+          Simfoni Rasa <br />
+          <span class="text-gradient-gold italic font-light"
+            >Dalam Tiap Gigitan</span
+          >
+        </h1>
+        <p
+          class="text-textmuted font-medium text-lg md:text-xl mb-10 max-w-2xl mx-auto"
+        >
+          Karya seni kuliner elegan yang dipelopori oleh
+          ahli kuliner berpengalaman. Menghadirkan tekstur
+          renyah di luar dengan kelembutan lumer di dalam.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#koleksi"
+            class="px-8 py-4 bg-gold text-white font-bold tracking-wide uppercase text-sm hover:bg-gold-dark transition-all transform hover:-translate-y-1 rounded-sm shadow-[0_10px_20px_rgba(212,175,55,0.3)]"
+            >Lihat Koleksi</a
+          >
+          <a
+            href="#cerita"
+            class="px-8 py-4 border-2 border-gold text-gold font-bold tracking-wide uppercase text-sm hover:bg-gold hover:text-white transition-all transform hover:-translate-y-1 rounded-sm"
+            >Kisah Kami</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section
+      id="cerita"
+      class="py-24 md:py-32 bg-cream relative"
+    >
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center"
+        >
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1200"
+          >
+            <p
+              class="text-gold tracking-[0.2em] font-semibold text-sm uppercase mb-2"
+            >
+              Heritage & Passion
+            </p>
+            <h2
+              class="font-serif text-4xl md:text-5xl text-textmain mb-6 font-bold"
+            >
+              Kisah di Balik Rasa
+            </h2>
+            <div class="w-20 h-1 bg-gold mb-8"></div>
+            <p
+              class="text-textmuted text-lg leading-relaxed mb-6 font-medium"
+            >
+              Berawal dari *passion* yang mendalam terhadap
+              kuliner otentik Nusantara,
+              <strong
+                class="text-gold-dark font-serif text-2xl italic"
+                >Bakul Risol</strong
+              >
+              hadir dengan satu visi utama: menaikkan level
+              jajanan klasik menjadi hidangan premium kelas
+              atas.
+            </p>
+            <p
+              class="text-textmuted text-lg leading-relaxed mb-8"
+            >
+              Kami percaya bahwa kemewahan sejati terletak
+              pada kualitas bahan baku. Setiap lembar kulit
+              risol diracik secara *homemade* dengan resep
+              rahasia keluarga. Isian daging premium dan
+              keju berkualitas tinggi menciptakan ledakan
+              rasa "Love at the first bite" yang tak
+              terlupakan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section
+      id="koleksi"
+      class="py-24 bg-cream-light relative border-y border-cream-dark w-full overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 md:px-12 relative z-10 w-full"
+      >
+        <div class="text-center mb-12" data-aos="fade-up">
+          <p
+            class="text-gold font-bold tracking-[0.2em] text-sm uppercase mb-3"
+          >
+            Menu Eksklusif
+          </p>
+          <h2
+            class="font-serif text-4xl md:text-5xl text-textmain font-bold"
+          >
+            Koleksi Signature Kami
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5 w-full"
+        >
+          <!-- Item 1 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="relative img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <!-- Label Best Seller -->
+              <div
+                class="absolute top-2 right-2 bg-red-700/95 backdrop-blur-sm text-white text-[9px] md:text-[10px] font-bold px-2 py-1 shadow-md z-10 rounded-sm uppercase tracking-widest flex items-center gap-1 pointer-events-none"
+              >
+                <i class="fas fa-crown text-gold-light"></i>
+                Best Seller
+              </div>
+              <img
+                src="risolmatchakeju.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Matcha Keju
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 45K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Matcha Keju',
+                  45000,
+                  'risolmatchakeju.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 2 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="relative img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <!-- Label Best Seller -->
+              <div
+                class="absolute top-2 right-2 bg-red-700/95 backdrop-blur-sm text-white text-[9px] md:text-[10px] font-bold px-2 py-1 shadow-md z-10 rounded-sm uppercase tracking-widest flex items-center gap-1 pointer-events-none"
+              >
+                <i class="fas fa-crown text-gold-light"></i>
+                Best Seller
+              </div>
+              <img
+                src="tiramisuoreo.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Tiramisu Oreo
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 50K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Tiramisu Oreo',
+                  50000,
+                  'tiramisuoreo.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 3 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="Risol Jasuke.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Jasuke
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 45K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Jasuke',
+                  45000,
+                  'Risol Jasuke.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="Risol Rogut Ayam.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Rogut Ayam
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 40K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Rogut Ayam',
+                  40000,
+                  'Risol Rogut Ayam.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 5 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="coklatkeju.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Coklat keju
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 45K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Coklat keju',
+                  45000,
+                  'coklatkeju.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 6 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="smockbeeftelormayo.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Smock Beef Telor Mayo
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 50K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Smock Beef Telor Mayo',
+                  50000,
+                  'smockbeeftelormayo.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 7 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="carbonara.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Carbonara
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 40K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Carbonara',
+                  40000,
+                  'carbonara.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 8 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="bolognese.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Bolognese
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 50K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Bolognese',
+                  50000,
+                  'bolognese.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 9 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="beefladahitam.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Beef Lada Hitam
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 45K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Beef Lada Hitam',
+                  45000,
+                  'beefladahitam.jpg',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+
+          <!-- Item 10 -->
+          <div
+            class="group bg-white p-3 md:p-4 transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-gold-subtle rounded-sm flex flex-col items-center text-center"
+          >
+            <div
+              class="img-hover-zoom mb-3 aspect-square w-full rounded-sm overflow-hidden shadow-sm"
+            >
+              <img
+                src="ayamsuwir.jpg"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3
+              class="font-serif font-bold text-sm md:text-base text-textmain mb-1 min-h-[40px] flex items-center justify-center"
+            >
+              Risol Ayam Suwir
+            </h3>
+            <p
+              class="font-serif font-bold text-sm text-gold-dark mt-auto pb-2"
+            >
+              IDR 40K
+            </p>
+            <button
+              onclick="
+                addToCart(
+                  'Risol Ayam Suwir',
+                  40000,
+                  'ayamsuwir.jpg  ',
+                )
+              "
+              class="w-full py-2 bg-cream text-gold text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all border border-gold rounded-sm"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-24 bg-white relative">
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-12 relative z-10"
+      >
+        <div class="text-center mb-16" data-aos="fade-up">
+          <p
+            class="text-gold font-bold tracking-[0.2em] text-sm uppercase mb-3"
+          >
+            Kata Mereka
+          </p>
+          <h2
+            class="font-serif text-4xl md:text-5xl text-textmain font-bold"
+          >
+            Ulasan Pelanggan
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testi 1 -->
+          <div
+            class="bg-cream-light p-8 rounded-sm shadow-sm border border-cream-dark hover:-translate-y-2 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex text-gold mb-4 text-sm">
+              <i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="text-textmuted italic mb-6">
+              "Rasa Smoked Beef & Cheese-nya beneran juara!
+              Lumer banget di mulut dan kulitnya renyah.
+              Nagih banget buat cemilan sore bareng
+              keluarga."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-cream-dark rounded-full overflow-hidden"
+              >
+                <img
+                  src="https://i.pravatar.cc/150?img=47"
+                  alt="Customer"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-textmain text-sm">
+                  Dinda Paramitha
+                </h4>
+                <p class="text-xs text-textmuted">
+                  Karyawan Swasta
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testi 2 -->
+          <div
+            class="bg-cream-light p-8 rounded-sm shadow-sm border border-cream-dark hover:-translate-y-2 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex text-gold mb-4 text-sm">
+              <i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text-textmuted italic mb-6">
+              "Pesan untuk acara arisan dan semuanya pada
+              suka. Truffle Chicken Ragout-nya wangi banget,
+              ukurannya juga besar dan ngenyangin.
+              Recommended!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-cream-dark rounded-full overflow-hidden"
+              >
+                <img
+                  src="https://i.pravatar.cc/150?img=32"
+                  alt="Customer"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-textmain text-sm">
+                  Sarah Meiliana
+                </h4>
+                <p class="text-xs text-textmuted">
+                  Ibu Rumah Tangga
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testi 3 -->
+          <div
+            class="bg-cream-light p-8 rounded-sm shadow-sm border border-cream-dark hover:-translate-y-2 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex text-gold mb-4 text-sm">
+              <i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="text-textmuted italic mb-6">
+              "Varian Volcano Spicy Mayo bener-bener nendang
+              pedesnya tapi nikmat. Packaging-nya sangat
+              premium, cocok juga buat dikirim sebagai
+              hampers."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-cream-dark rounded-full overflow-hidden"
+              >
+                <img
+                  src="https://i.pravatar.cc/150?img=11"
+                  alt="Customer"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-textmain text-sm">
+                  Andi Setiawan
+                </h4>
+                <p class="text-xs text-textmuted">
+                  Wiraswasta
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Konsultasi Sekarang Section -->
+    <section
+      id="pesan"
+      class="py-24 bg-[#1A1818] relative overflow-hidden"
+    >
+      <!-- Background Texture Elements -->
+      <div
+        class="absolute inset-0 bg-texture opacity-10 pointer-events-none"
+      ></div>
+
+      <div
+        class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
+        <i
+          class="fab fa-whatsapp text-6xl text-gold mb-6 drop-shadow-md"
+        ></i>
+        <h2
+          class="font-serif text-4xl md:text-5xl text-white font-bold mb-6 tracking-wide"
+        >
+          Pesan Untuk Acara Spesial?
+        </h2>
+        <p
+          class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed"
+        >
+          Butuh hidangan premium untuk arisan, rapat kantor,
+          atau kumpul keluarga? Tim kami siap membantu
+          menyusun paket terbaik untuk momen spesial Anda.
+        </p>
+        <a
+          href="https://wa.me/6281336622281?text=Halo%20Admin%20Bakul%20Risol,%20saya%20ingin%20konsultasi%20pesanan%20khusus%20untuk%20acara..."
+          target="_blank"
+          class="inline-block px-10 py-4 bg-gold text-white font-bold tracking-widest uppercase text-sm hover:bg-gold-light transition-all duration-300 rounded-sm shadow-[0_10px_30px_rgba(212,175,55,0.3)] transform hover:-translate-y-1"
+        >
+          Konsultasi Sekarang
+        </a>
+      </div>
+    </section>
+
+    <!-- Complete Footer -->
+    <footer
+      class="bg-[#111010] text-white pt-20 pb-10 border-t-[6px] border-gold"
+    >
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <!-- Brand Info -->
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <img
+                src="logobakurisol.jpg"
+                onerror="
+                  this.src =
+                    'https://placehold.co/100x100/D4AF37/ffffff?text=BR'
+                "
+                alt="Logo Bakul Risol"
+                class="w-14 h-14 rounded-full border-2 border-gold object-cover"
+              />
+              <span
+                class="font-serif text-2xl font-bold tracking-wider text-gold"
+                >BAKUL RISOL</span
+              >
+            </div>
+            <p
+              class="text-gray-400 text-sm leading-relaxed pr-4"
+            >
+              Karya seni kuliner elegan yang menghadirkan
+              tekstur renyah di luar dengan kelembutan lumer
+              di dalam. Dedicated to serving authentic
+              premium taste.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4
+              class="font-serif text-xl font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block"
+            >
+              Tautan Cepat
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a
+                  href="#beranda"
+                  class="hover:text-gold transition-colors flex items-center gap-2"
+                  ><i
+                    class="fas fa-chevron-right text-[10px] text-gold"
+                  ></i>
+                  Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#cerita"
+                  class="hover:text-gold transition-colors flex items-center gap-2"
+                  ><i
+                    class="fas fa-chevron-right text-[10px] text-gold"
+                  ></i>
+                  Kisah Kami</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#koleksi"
+                  class="hover:text-gold transition-colors flex items-center gap-2"
+                  ><i
+                    class="fas fa-chevron-right text-[10px] text-gold"
+                  ></i>
+                  Menu Koleksi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimoni"
+                  class="hover:text-gold transition-colors flex items-center gap-2"
+                  ><i
+                    class="fas fa-chevron-right text-[10px] text-gold"
+                  ></i>
+                  Testimoni</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Details -->
+          <div>
+            <h4
+              class="font-serif text-xl font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block"
+            >
+              Hubungi Kami
+            </h4>
+            <ul class="space-y-4 text-sm text-gray-400">
+              <li class="flex items-start gap-4">
+                <i
+                  class="fas fa-map-marker-alt text-gold mt-1 text-lg"
+                ></i>
+                <span class="leading-relaxed"
+                  >Tangerang, Banten,<br />Indonesia</span
+                >
+              </li>
+              <li class="flex items-center gap-4">
+                <i
+                  class="fas fa-phone-alt text-gold text-lg"
+                ></i>
+                <span>+62 813 3662 2281</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <i
+                  class="fas fa-envelope text-gold text-lg"
+                ></i>
+                <span>hello@bakulrisol.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+            <h4
+              class="font-serif text-xl font-bold mb-6 text-white border-b border-gray-800 pb-2 inline-block"
+            >
+              Ikuti Kami
+            </h4>
+            <p class="text-sm text-gray-400 mb-4">
+              Dapatkan info promo dan menu terbaru di sosial
+              media kami.
+            </p>
+            <div class="flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/bakuulrisol/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gold hover:-translate-y-1 transition-all duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/bakuulrisol/"
+                target="_blank"
+                class="text-sm text-gray-400 hover:text-gold transition-colors"
+              >
+                @bakuulrisol
+              </a>
+            </div>
+            <!-- Extra Socials -->
+            <div class="flex gap-4 mt-3">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gold hover:-translate-y-1 transition-all duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gold hover:-translate-y-1 transition-all duration-300"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright Strip -->
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p
+            class="text-gray-500 text-xs font-medium text-center md:text-left"
+          >
+            © 2026 Bakul Risol Premium. All rights reserved.
+          </p>
+          <div class="text-gray-500 text-xs flex gap-6">
+            <a
+              href="#"
+              class="hover:text-gold transition-colors"
+              >Syarat & Ketentuan</a
+            >
+            <a
+              href="#"
+              class="hover:text-gold transition-colors"
+              >Kebijakan Privasi</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- 1. CART DRAWER (Hanya Menampilkan Item)      -->
+    <!-- ========================================== -->
+    <div
+      id="cart-drawer-overlay"
+      class="fixed inset-0 z-[200] hidden bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+      onclick="toggleCart()"
+    ></div>
+
+    <div
+      id="cart-drawer"
+      class="slide-panel fixed top-0 right-0 z-[201] w-full max-w-md h-full bg-cream-light shadow-2xl flex flex-col translate-x-full"
+    >
+      <div
+        class="p-6 border-b border-gold/15 flex justify-between items-center bg-white"
+      >
+        <div class="flex items-center gap-2">
+          <i
+            class="fas fa-shopping-bag text-gold text-xl"
+          ></i>
+          <h2
+            class="font-serif text-2xl font-bold text-textmain"
+          >
+            Keranjang Belanja
+          </h2>
+        </div>
+        <button
+          onclick="toggleCart()"
+          class="text-textmuted hover:text-gold text-2xl transition-colors"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div
+        id="cart-items-container"
+        class="flex-1 overflow-y-auto p-6 space-y-6"
+      >
+        <div
+          id="cart-empty-state"
+          class="h-full flex flex-col items-center justify-center text-center space-y-4"
+        >
+          <i
+            class="fas fa-box-open text-4xl text-gold-dark"
+          ></i>
+          <h3 class="font-serif text-lg font-bold">
+            Keranjang kosong!
+          </h3>
+          <button
+            onclick="toggleCart()"
+            class="px-6 py-2 bg-gold text-white text-xs font-bold uppercase rounded-full"
+          >
+            Mulai Belanja
+          </button>
+        </div>
+        <!-- Items rendered here -->
+        <div
+          id="cart-active-items"
+          class="space-y-4 hidden"
+        ></div>
+      </div>
+
+      <!-- Footer Cart -> Tombol pindah ke halaman Checkout -->
+      <div
+        id="cart-footer"
+        class="p-5 border-t border-gold/15 bg-white flex justify-between items-center hidden z-[202]"
+      >
+        <div>
+          <p
+            class="text-[10px] text-textmuted font-semibold uppercase"
+          >
+            Total Harga
+          </p>
+          <p
+            id="cart-total-price"
+            class="font-serif text-xl font-bold text-gold-dark"
+          >
+            IDR 0
+          </p>
+        </div>
+        <button
+          onclick="openCheckoutPage()"
+          class="px-6 py-3 bg-gold text-white font-bold uppercase text-xs hover:bg-gold-dark transition-all rounded-sm shadow-md"
+        >
+          Checkout <i class="fas fa-arrow-right ml-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. HALAMAN KHUSUS CHECKOUT (PAYMENT PAGE)  -->
+    <!-- ========================================== -->
+    <div
+      id="checkout-page"
+      class="fixed inset-0 z-[250] bg-cream-light transform translate-x-full transition-transform duration-500 overflow-y-auto w-full h-full flex flex-col justify-start"
+    >
+      <!-- Header Checkout (Selalu menempel di atas agar navigasi kembali mudah diakses) -->
+      <div
+        class="bg-white px-6 py-4 border-b border-gold/20 flex items-center gap-4 sticky top-0 z-[260] shadow-sm shrink-0"
+      >
+        <button
+          onclick="closeCheckoutPage()"
+          class="text-textmain hover:text-gold text-xl p-2 -ml-2"
+        >
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <h2
+          class="font-serif text-2xl font-bold text-textmain"
+        >
+          Pembayaran
+        </h2>
+      </div>
+
+      <!-- Wrapper form utama - Menggunakan shrink-0 & pb-12 agar semua form tampil memanjang & bisa digulir tanpa scroller ganda -->
+      <div
+        class="max-w-2xl mx-auto w-full p-6 space-y-8 shrink-0 pb-12"
+      >
+        <!-- Order Summary Detail -->
+        <div
+          class="bg-white p-5 rounded-sm border border-cream-dark shadow-sm"
+        >
+          <h3
+            class="font-serif text-lg font-bold text-textmain border-b border-cream-dark pb-3 mb-3"
+          >
+            Ringkasan Pesanan
+          </h3>
+          <div
+            id="checkout-summary-items"
+            class="space-y-2 mb-4 text-sm text-textmuted"
+          >
+            <!-- Summary items injected here -->
+          </div>
+          <div
+            class="flex justify-between items-center pt-3 border-t border-cream-dark"
+          >
+            <span class="font-bold text-textmain"
+              >Total Tagihan</span
+            >
+            <span
+              id="checkout-grand-total"
+              class="font-serif text-xl font-bold text-gold-dark"
+              >IDR 0</span
+            >
+          </div>
+        </div>
+
+        <!-- Form Data Diri -->
+        <div
+          class="bg-white p-5 rounded-sm border border-cream-dark shadow-sm space-y-4"
+        >
+          <h3
+            class="font-serif text-lg font-bold text-textmain border-b border-cream-dark pb-3"
+          >
+            Informasi Pengiriman
+          </h3>
+          <div class="space-y-2">
+            <label
+              class="block text-xs font-bold uppercase text-textmuted"
+              >Nama Pemesan</label
+            >
+            <input
+              type="text"
+              id="order-name"
+              placeholder="Masukkan nama Anda"
+              class="w-full px-4 py-3 border border-cream-dark focus:border-gold rounded-sm text-sm focus:outline-none bg-cream-light"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="block text-xs font-bold uppercase text-textmuted"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="order-email"
+              placeholder="Masukkan email Anda"
+              class="w-full px-4 py-3 border border-cream-dark focus:border-gold rounded-sm text-sm focus:outline-none bg-cream-light"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="block text-xs font-bold uppercase text-textmuted"
+              >Nomor Telepon / WhatsApp</label
+            >
+            <input
+              type="tel"
+              id="order-phone"
+              placeholder="Contoh: 08123456789"
+              class="w-full px-4 py-3 border border-cream-dark focus:border-gold rounded-sm text-sm focus:outline-none bg-cream-light"
+            />
+          </div>
+          <div class="space-y-2">
+            <label
+              class="block text-xs font-bold uppercase text-textmuted"
+              >Alamat Lengkap</label
+            >
+            <textarea
+              id="order-address"
+              rows="3"
+              placeholder="Masukkan alamat pengiriman..."
+              class="w-full px-4 py-3 border border-cream-dark focus:border-gold rounded-sm text-sm focus:outline-none bg-cream-light resize-none"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Pilihan Metode Pembayaran -->
+        <div
+          class="bg-white p-5 rounded-sm border border-cream-dark shadow-sm space-y-4"
+        >
+          <h3
+            class="font-serif text-lg font-bold text-textmain border-b border-cream-dark pb-3"
+          >
+            Pilih Metode Pembayaran
+          </h3>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-3"
+          >
+            <button
+              id="pay-gopay"
+              onclick="setPaymentMethod('gopay')"
+              class="payment-option-btn border-2 border-gold bg-cream-light text-gold p-4 rounded-sm flex flex-col items-center justify-center gap-2 transition-all"
+            >
+              <i class="fas fa-wallet text-2xl"></i>
+              <span
+                class="text-xs font-bold uppercase tracking-wider"
+                >GOPAY</span
+              >
+            </button>
+            <button
+              id="pay-qris"
+              onclick="setPaymentMethod('qris')"
+              class="payment-option-btn border-2 border-cream-dark text-textmuted p-4 rounded-sm flex flex-col items-center justify-center gap-2 transition-all"
+            >
+              <i class="fas fa-qrcode text-2xl"></i>
+              <span
+                class="text-xs font-bold uppercase tracking-wider"
+                >QRIS</span
+              >
+            </button>
+            <button
+              id="pay-mbanking"
+              onclick="setPaymentMethod('mbanking')"
+              class="payment-option-btn border-2 border-cream-dark text-textmuted p-4 rounded-sm flex flex-col items-center justify-center gap-2 transition-all"
+            >
+              <i class="fas fa-university text-2xl"></i>
+              <span
+                class="text-xs font-bold uppercase tracking-wider"
+                >M-BANKING</span
+              >
+            </button>
+          </div>
+
+          <!-- Instruksi Pembayaran Aktif -->
+          <div
+            id="payment-details-box"
+            class="bg-cream-light p-4 rounded-sm border border-gold-subtle mt-4 text-sm text-textmain transition-all shadow-inner"
+          >
+            <!-- Detail GoPay -->
+            <div
+              id="detail-gopay"
+              class="text-center space-y-3"
+            >
+              <div
+                class="w-12 h-12 bg-[#00AED6] rounded-full flex items-center justify-center mx-auto text-white text-xl mb-2"
+              >
+                <i class="fas fa-wallet"></i>
+              </div>
+              <p class="font-semibold text-base">
+                Transfer ke GoPay
+              </p>
+              <p
+                class="font-serif text-2xl text-gold-dark font-bold tracking-widest"
+              >
+                0813 3662 2281
+              </p>
+              <p
+                class="text-xs text-textmuted max-w-sm mx-auto"
+              >
+                Atas Nama: <strong>Aziz Muqorrobin</strong>
+              </p>
+            </div>
+
+            <!-- Detail QRIS -->
+            <div
+              id="detail-qris"
+              class="hidden text-center space-y-3"
+            >
+              <p class="font-semibold">
+                Pindai Kode QRIS Resmi:
+              </p>
+              <img
+                src="qrisaziz.jpg"
+                alt="QRIS"
+                class="border border-gold p-2 rounded bg-white shadow-md mx-auto"
+              />
+            </div>
+
+            <!-- Detail M-Banking -->
+            <div
+              id="detail-mbanking"
+              class="hidden text-center space-y-2 py-2"
+            >
+              <p class="font-semibold">
+                Transfer Manual Bank BCA:
+              </p>
+              <p
+                class="font-serif text-2xl text-gold-dark font-bold tracking-widest"
+              >
+                8161 2489 01
+              </p>
+              <p class="text-xs">
+                Atas Nama:
+                <strong>Admin Bakul Risol</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peringatan Bukti Pembayaran -->
+        <div
+          class="bg-red-50 border-l-4 border-red-500 p-5 rounded-sm shadow-sm"
+        >
+          <div class="flex items-start gap-4">
+            <i
+              class="fas fa-exclamation-circle text-red-500 text-lg mt-0.5"
+            ></i>
+            <div
+              class="text-sm text-red-800 leading-relaxed"
+            >
+              <strong class="font-bold text-red-900"
+                >INFORMASI PENTING!</strong
+              >
+              <p class="mt-1">
+                Mohon siapkan dan kirimkan
+                <strong>bukti transaksi/pembayaran</strong>
+                ke WhatsApp Admin setelah Anda menyelesaikan
+                pesanan.
+              </p>
+              <p class="mt-2 font-medium italic">
+                "Pesanan Anda hanya akan segera diproses
+                setelah bukti pembayaran kami terima dan
+                verifikasi. Terima kasih!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Action di halaman Checkout -->
+      <div
+        class="w-full bg-white border-t border-gold/20 p-5 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] mt-auto shrink-0 flex justify-between items-center px-6 md:px-20"
+      >
+        <div>
+          <p
+            class="text-[10px] text-textmuted font-semibold uppercase"
+          >
+            Total Pembayaran
+          </p>
+          <p
+            id="checkout-footer-total"
+            class="font-serif text-2xl font-bold text-gold-dark"
+          >
+            IDR 0
+          </p>
+        </div>
+        <button
+          onclick="processFinalPayment()"
+          class="px-8 py-4 bg-gold text-white font-bold uppercase text-sm hover:bg-gold-dark transition-all rounded-sm shadow-lg flex items-center gap-2"
+        >
+          <i class="fas fa-lock"></i> Konfirmasi & Bayar
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div
+      class="fixed bottom-6 right-6 flex flex-col gap-3 z-50"
+    >
+      <button
+        onclick="toggleCart()"
+        class="w-14 h-14 bg-gold text-white rounded-full flex items-center justify-center text-xl shadow-lg hover:scale-110 transition-all relative"
+      >
+        <i class="fas fa-shopping-cart"></i>
+        <span
+          id="cart-badge-floating"
+          class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full scale-0 transition-all"
+          >0</span
+        >
+      </button>
+    </div>
+
+    <!-- Toast -->
+    <div
+      id="cart-toast"
+      class="fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-textmain text-white py-3 px-6 rounded-full shadow-2xl text-xs font-semibold tracking-wider uppercase z-[300] pointer-events-none opacity-0 transition-all duration-300 flex items-center gap-2"
+    >
+      <i class="fas fa-check-circle text-gold"></i>
+      <span>Menu Ditambahkan</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, offset: 50 });
+
+      // ==========================================
+      // NAVBAR SCROLL EFFECT
+      // ==========================================
+      window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('glass-nav', 'py-2');
+          navbar.classList.remove('py-4');
+        } else {
+          navbar.classList.remove('glass-nav', 'py-2');
+          navbar.classList.add('py-4');
+        }
+      });
+
+      // Core Cart State
+      let cart = [];
+      let currentPaymentMethod = 'gopay'; // Default GoPay
+      let totalAmount = 0;
+
+      // ==========================================
+      // UI TOGGLES
+      // ==========================================
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('opacity-0');
+        menu.classList.toggle('pointer-events-none');
+        menu.classList.toggle('scale-95');
+
+        // Lock scroll saat menu overlay terbuka
+        if (menu.classList.contains('opacity-0')) {
+          document.body.style.overflow = 'auto';
+        } else {
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function toggleCart() {
+        const overlay = document.getElementById(
+          'cart-drawer-overlay',
+        );
+        const drawer =
+          document.getElementById('cart-drawer');
+        const isHidden = drawer.classList.contains(
+          'translate-x-full',
+        );
+
+        if (isHidden) {
+          overlay.classList.remove('hidden');
+          setTimeout(() => {
+            overlay.classList.add('opacity-100');
+            drawer.classList.remove('translate-x-full');
+          }, 10);
+        } else {
+          overlay.classList.remove('opacity-100');
+          drawer.classList.add('translate-x-full');
+          setTimeout(
+            () => overlay.classList.add('hidden'),
+            300,
+          );
+        }
+      }
+
+      // Membuka halaman khusus Checkout (Menggeser halaman overlay)
+      function openCheckoutPage() {
+        if (cart.length === 0) return;
+
+        // Tutup keranjang samping
+        toggleCart();
+
+        // Render ringkasan belanja di halaman checkout
+        renderCheckoutSummary();
+
+        // Tampilkan layar penuh Checkout
+        const checkoutPage =
+          document.getElementById('checkout-page');
+        checkoutPage.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden'; // Kunci scroll layar utama
+      }
+
+      function closeCheckoutPage() {
+        const checkoutPage =
+          document.getElementById('checkout-page');
+        checkoutPage.classList.add('translate-x-full');
+        document.body.style.overflow = 'auto';
+
+        // Buka lagi keranjangnya agar user tidak bingung
+        setTimeout(() => toggleCart(), 400);
+      }
+
+      // ==========================================
+      // PAYMENT METHOD SELECTION
+      // ==========================================
+      function setPaymentMethod(method) {
+        currentPaymentMethod = method;
+
+        // Reset Styles
+        document
+          .querySelectorAll('.payment-option-btn')
+          .forEach((btn) => {
+            btn.classList.remove(
+              'border-gold',
+              'text-gold',
+              'bg-cream-light',
+            );
+            btn.classList.add(
+              'border-cream-dark',
+              'text-textmuted',
+            );
+          });
+
+        // Set Active Style
+        const activeBtn = document.getElementById(
+          `pay-${method}`,
+        );
+        activeBtn.classList.remove(
+          'border-cream-dark',
+          'text-textmuted',
+        );
+        activeBtn.classList.add(
+          'border-gold',
+          'text-gold',
+          'bg-cream-light',
+        );
+
+        // Toggle Details
+        document
+          .getElementById('detail-qris')
+          .classList.add('hidden');
+        document
+          .getElementById('detail-gopay')
+          .classList.add('hidden');
+        document
+          .getElementById('detail-mbanking')
+          .classList.add('hidden');
+        document
+          .getElementById(`detail-${method}`)
+          .classList.remove('hidden');
+      }
+
+      // ==========================================
+      // CART LOGIC
+      // ==========================================
+      function addToCart(name, price, imageUrl) {
+        const existingItem = cart.find(
+          (item) => item.name === name,
+        );
+        if (existingItem) existingItem.quantity += 1;
+        else
+          cart.push({
+            name,
+            price,
+            image: imageUrl,
+            quantity: 1,
+          });
+        renderCart();
+        showToast(`${name} masuk keranjang`);
+      }
+
+      function updateQuantity(index, change) {
+        cart[index].quantity += change;
+        if (cart[index].quantity <= 0)
+          cart.splice(index, 1);
+        renderCart();
+      }
+
+      function removeItem(index) {
+        cart.splice(index, 1);
+        renderCart();
+      }
+
+      function renderCart() {
+        const activeContainer = document.getElementById(
+          'cart-active-items',
+        );
+        const emptyState = document.getElementById(
+          'cart-empty-state',
+        );
+        const footer =
+          document.getElementById('cart-footer');
+
+        const totalCount = cart.reduce(
+          (acc, item) => acc + item.quantity,
+          0,
+        );
+        totalAmount = cart.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0,
+        );
+
+        [
+          'cart-badge-desktop',
+          'cart-badge-mobile',
+          'cart-badge-floating',
+        ].forEach((id) => {
+          const badge = document.getElementById(id);
+          badge.innerText = totalCount;
+          if (totalCount > 0)
+            badge.classList.replace('scale-0', 'scale-100');
+          else
+            badge.classList.replace('scale-100', 'scale-0');
+        });
+
+        if (cart.length === 0) {
+          emptyState.classList.remove('hidden');
+          activeContainer.classList.add('hidden');
+          footer.classList.add('hidden');
+          return;
+        }
+
+        emptyState.classList.add('hidden');
+        activeContainer.classList.remove('hidden');
+        footer.classList.remove('hidden');
+
+        activeContainer.innerHTML = '';
+        cart.forEach((item, index) => {
+          activeContainer.innerHTML += `
+            <div class="flex items-center gap-4 bg-white p-3 rounded-sm border border-cream-dark">
+              <img src="${item.image}" class="w-16 h-16 object-cover rounded-sm" />
+              <div class="flex-1">
+                <h4 class="font-bold text-sm mb-1">${item.name}</h4>
+                <p class="text-xs text-gold-dark font-semibold">IDR ${item.price.toLocaleString()}</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <div class="flex items-center border border-cream-dark rounded-sm bg-cream-light">
+                    <button onclick="updateQuantity(${index}, -1)" class="px-2 font-bold">-</button>
+                    <span class="px-2 text-xs">${item.quantity}</span>
+                    <button onclick="updateQuantity(${index}, 1)" class="px-2 font-bold">+</button>
+                  </div>
+                  <button onclick="removeItem(${index})" class="text-xs text-red-500 ml-2"><i class="far fa-trash-alt"></i></button>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        document.getElementById(
+          'cart-total-price',
+        ).innerText = `IDR ${totalAmount.toLocaleString()}`;
+      }
+
+      function renderCheckoutSummary() {
+        const container = document.getElementById(
+          'checkout-summary-items',
+        );
+        container.innerHTML = '';
+
+        cart.forEach((item) => {
+          const sub = item.price * item.quantity;
+          container.innerHTML += `
+            <div class="flex justify-between items-center">
+              <span>${item.quantity}x ${item.name}</span>
+              <span class="font-semibold text-textmain">IDR ${sub.toLocaleString()}</span>
+            </div>
+          `;
+        });
+
+        const totalStr = `IDR ${totalAmount.toLocaleString()}`;
+        document.getElementById(
+          'checkout-grand-total',
+        ).innerText = totalStr;
+        document.getElementById(
+          'checkout-footer-total',
+        ).innerText = totalStr;
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById('cart-toast');
+        toast.querySelector('span').innerText = message;
+        toast.classList.replace('opacity-0', 'opacity-100');
+        setTimeout(
+          () =>
+            toast.classList.replace(
+              'opacity-100',
+              'opacity-0',
+            ),
+          2500,
+        );
+      }
+
+      // ==========================================
+      // FINAL CHECKOUT PROCESS (WA ONLY)
+      // ==========================================
+      function processFinalPayment() {
+        const name = document
+          .getElementById('order-name')
+          .value.trim();
+        const email = document
+          .getElementById('order-email')
+          .value.trim();
+        const phone = document
+          .getElementById('order-phone')
+          .value.trim();
+        const address = document
+          .getElementById('order-address')
+          .value.trim();
+
+        if (!name || !email || !phone || !address) {
+          showToast(
+            'Mohon lengkapi semua data pengiriman terlebih dahulu!',
+          );
+          return;
+        }
+
+        // Buat Pesan WhatsApp
+        let paymentLabel = '';
+        if (currentPaymentMethod === 'qris')
+          paymentLabel = 'QRIS';
+        else if (currentPaymentMethod === 'gopay')
+          paymentLabel = 'GoPay';
+        else if (currentPaymentMethod === 'mbanking')
+          paymentLabel = 'Transfer BCA';
+
+        let message = `Halo Admin Bakul Risol, saya ingin konfirmasi pesanan saya:\n\n`;
+        message += `👤 *Nama:* ${name}\n`;
+        message += `📧 *Email:* ${email}\n`;
+        message += `📞 *No. WhatsApp:* ${phone}\n`;
+        message += `📍 *Alamat:* ${address}\n`;
+        message += `💳 *Metode:* *${paymentLabel}*\n\n`;
+        message += `🛒 *Detail Pesanan:*\n`;
+
+        cart.forEach((item) => {
+          message += `- ${item.quantity}x ${item.name} = IDR ${(item.price * item.quantity).toLocaleString()}\n`;
+        });
+
+        message += `\n💵 *Total Pembayaran: IDR ${totalAmount.toLocaleString()}*\n\n`;
+        message += `⚠️ _Saya akan melampirkan foto struk bukti pembayaran setelah pesan ini._`;
+
+        // Redirect ke WA dengan encodeURIComponent yang aman untuk karakter khusus seperti '&'
+        const waUrl = `https://wa.me/6281336622281?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank');
+      }
+    </script>
+  </body>
+</html>
